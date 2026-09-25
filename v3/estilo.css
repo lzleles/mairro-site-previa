@@ -327,7 +327,8 @@ main{min-height:60vh;outline:none}
 .sanfona td{padding:7px 0;border-bottom:1px dashed var(--linha)}
 .sanfona td:first-child{color:var(--texto-peq);width:44%}
 @media (max-width:860px){
-  .ficha{grid-template-columns:1fr;padding-top:10px}
+  /* 25/09/2026: minmax(0,1fr), nao 1fr - o 1fr (=minmax(auto,1fr)) crescia ate a galeria que rola de lado e a ficha abria com 413 px num celular de 390 */
+  .ficha{grid-template-columns:minmax(0,1fr);padding-top:10px}
   .galeria{grid-template-columns:none;grid-auto-flow:column;grid-auto-columns:88%;overflow-x:auto;scroll-snap-type:x mandatory;
     margin:0 calc(var(--lado)*-1);padding:0 var(--lado);scrollbar-width:none}
   .galeria::-webkit-scrollbar{display:none}
